@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Barbaras</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+
+    <string name="internet_error">No internet connection</string>
+    <string name="login_error">Incorrect login or password</string>
 </resources>

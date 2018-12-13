@@ -6,35 +6,79 @@
     android:gravity="center"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
     tools:context=".MainActivity">
 
+    <ProgressBar
+        android:id="@+id/main_login_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/standard_margin"
+        android:visibility="gone"/>
 
     <LinearLayout
+        android:id="@+id/main_login_box"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/standard_margin"
+        android:animateLayoutChanges="true"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/main_login_error"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:gravity="center"
+            android:textColor="@color/error"
+            android:text="@string/login_error"/>
 
         <EditText
+            android:id="@+id/main_login_edit"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/minimum_length"
+            android:layout_marginBottom="@dimen/standard_margin"
+            android:hint="@string/login"
+            android:singleLine="true"/>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true">
 
             <EditText
+                android:id="@+id/main_password_edit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"/>
+                android:minHeight="@dimen/minimum_length"
+                android:layout_weight="1"
+                android:layout_marginEnd="@dimen/standard_margin"
+                android:inputType="textPassword"
+                android:hint="@string/password"
+                android:singleLine="true"/>
 
-            <ImageButton
+            <ImageView
+                android:id="@+id/main_login_image_send"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:minWidth="@dimen/minimum_length"
+                android:src="@drawable/ic_send"
+                android:visibility="gone"/>
         </LinearLayout>
-
-        <ImageButton
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
     </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:src="@drawable/full_logo"/>
+
+    <TextView
+        android:id="@+id/main_version_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/standard_margin"
+        android:gravity="center"/>
 </LinearLayout>
